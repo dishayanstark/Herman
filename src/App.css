@@ -1,38 +1,67 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-weight: bolder;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: italic;
+}
+body{
+    background-color: lightblue;
+}
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  padding: 35px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+button {
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  background-color: dodgerblue;
   color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: 2px 4px 10px black;
+}
+button:hover:active{
+    background-color: deepskyblue;
+}
+canvas {
+  border:none;
+  border-radius: 10px;
+  margin: 20px auto;
+  display: block;
+  box-shadow: 2px 4px 10px black;
+  background-color: white;
 }
 
-.App-link {
-  color: #61dafb;
+p {
+  font-size: 24px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.pulse-dot{
+  width: 14px;
+  height: 14px;
+  background: red;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  animation: pulse 1.2s infinite;
+  z-index: 2;
+}
+@keyframes pulse{
+  0%{
+    transform: translate(-50%,-50%) scale(0.9);
+    opacity: 1;
   }
-  to {
-    transform: rotate(360deg);
+  100%{
+    transform: translate(-50%,-50%) scale(1.6);
+    opacity: 0;
   }
 }
